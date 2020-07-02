@@ -7,13 +7,12 @@ def frequencySort(s: str) -> str:
     Link: https://leetcode.com/problems/sort-characters-by-frequency/
     Frequency sort
 
-    .. doctest::
-       >>> frequencySort('tree')
-       'eetr'
-       >>> frequencySort('cccaaa')
-       'cccaaa'
-       >>> frequencySort('raaeaedere')
-       'eeeeaaarrd'
+    >>> frequencySort('tree')
+    'eetr'
+    >>> frequencySort('cccaaa')
+    'cccaaa'
+    >>> frequencySort('raaeaedere')
+    'eeeeaaarrd'
     """
     counter = Counter(s)
     h = []
