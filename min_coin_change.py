@@ -18,7 +18,7 @@ def min_coin_change(amount, coins):
                 dp[i] = min(dp[i], 1 + dp[i - coin])
             else:
                 break
-    return dp[amount] if dp[amount] < amount else -1
+    return dp[amount] if dp[amount] <= amount else -1
 
 if __name__ == '__main__':
     import doctest
