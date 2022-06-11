@@ -7,6 +7,7 @@ class Solution:
                      of columns.
     Space complexiy: O(n*m), the space used by seen to keep track of visited squares, and the space used
                      by stack.
+    Note: if we allowed to modify the grid, we don't have to use seen variable
     .. doctest::
        >>> s= Solution()
        >>> s.maxAreaOfIsland([[1,1,0,0,0],[1,1,0,0,0],[0,0,0,1,1],[0,0,0,1,1]])
