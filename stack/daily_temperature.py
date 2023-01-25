@@ -8,6 +8,7 @@ Output: [1,1,4,2,1,1,0,0]
 """
 from typing import List
 
+
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         """
@@ -17,15 +18,17 @@ class Solution:
            [1, 1, 4, 2, 1, 1, 0, 0]
         """
         res = [0] * len(temperatures)
-        stack = [] # pair [temp, index]
+        stack = []  # pair [temp, index]
 
         for index, temp in enumerate(temperatures):
             while stack and temp > stack[-1][0]:
                 stackTemp, stackIndex = stack.pop()
-                res[stackIndex]= index - stackIndex
+                res[stackIndex] = index - stackIndex
             stack.append([temp, index])
         return res
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

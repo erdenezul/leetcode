@@ -19,6 +19,7 @@ def find_cycle(nums):
     return pt1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

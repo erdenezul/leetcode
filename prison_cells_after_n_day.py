@@ -1,4 +1,3 @@
-
 def transform_cells(cells):
     """
     Transform cells based on rules
@@ -12,6 +11,7 @@ def transform_cells(cells):
     for i in range(1, 7):
         res[i] = int(cells[i - 1] == cells[i + 1])
     return res
+
 
 def prison_after_n_days(cells, n):
     """
@@ -28,7 +28,7 @@ def prison_after_n_days(cells, n):
     """
     mapping = {}
     for i in range(n):
-        s = ''.join(map(str, cells))
+        s = "".join(map(str, cells))
         if s in mapping:
             loop_len = i - mapping[s]
             return prison_after_n_days(cells, (n - i) % loop_len)
@@ -37,6 +37,8 @@ def prison_after_n_days(cells, n):
             cells = transform_cells(cells)
     return cells
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

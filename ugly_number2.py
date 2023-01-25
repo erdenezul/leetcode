@@ -25,6 +25,8 @@ def nth_ugly_number(n):
             k += 1
     return numbers[n - 1]
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

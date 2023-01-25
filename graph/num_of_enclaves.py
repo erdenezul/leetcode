@@ -18,12 +18,11 @@ class Solution:
        27
     """
 
-    def valid(
-        self, grid: List[List[int]], i: int, j: int) -> bool:
+    def valid(self, grid: List[List[int]], i: int, j: int) -> bool:
         return 0 <= i < len(grid) and 0 <= j < len(grid[0]) and grid[i][j] == 1
 
     def dfsUtil(self, grid: List[List[int]], i: int, j: int) -> int:
-        directions = ((1, 0), (0, 1),(-1, 0), (0, -1))
+        directions = ((1, 0), (0, 1), (-1, 0), (0, -1))
         stack = [(i, j)]
         while stack:
             ci, cj = stack.pop()

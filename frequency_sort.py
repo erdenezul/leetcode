@@ -1,6 +1,7 @@
 from collections import Counter
 from heapq import heappush, heappop
 
+
 def frequencySort(s: str) -> str:
     """
     Given a string, sort it
@@ -24,6 +25,8 @@ def frequencySort(s: str) -> str:
         result = row[1] * row[0] + result
     return result
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
