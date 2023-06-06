@@ -1,7 +1,7 @@
 from typing import List
 
-class Solution:
 
+class Solution:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
         """
         >>> s = Solution()
@@ -19,17 +19,19 @@ class Solution:
             dp[i][0] = int(matrix[i][0])
             max_side = max(max_side, dp[i][0])
 
-        for j in range(1,m):
+        for j in range(1, m):
             dp[0][j] = int(matrix[0][j])
             max_side = max(max_side, dp[0][j])
         for i in range(1, n):
             for j in range(1, m):
                 if matrix[i][j] == "0":
                     continue
-                dp[i][j] = 1 + min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1])
+                dp[i][j] = 1 + min(dp[i][j - 1], dp[i - 1][j], dp[i - 1][j - 1])
                 max_side = max(max_side, dp[i][j])
         return max_side * max_side
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

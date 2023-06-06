@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         """
@@ -12,11 +13,13 @@ class Solution:
         reachable = 0
 
         for i, num in enumerate(nums):
-            if (reachable < i):
+            if reachable < i:
                 return False
             reachable = max(reachable, i + num)
         return True
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
