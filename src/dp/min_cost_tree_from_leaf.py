@@ -33,7 +33,7 @@ class Solution:
             return mem[start][end]
 
         nonLeafSum = float("inf")
-        maxLeaf = float('-inf')
+        maxLeaf = float("-inf")
         for i in range(start, end):
             left = self.dp(start, i, values, mem)
             right = self.dp(i + 1, end, values, mem)

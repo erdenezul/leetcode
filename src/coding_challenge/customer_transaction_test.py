@@ -20,7 +20,6 @@ def mocked_requests_get(*args, **kwargs):
 
 
 class TransactionSolutionTestCase(unittest.TestCase):
-
     # Now we must patch 'my.great.package.requests.get'
     @mock.patch("requests.get", side_effect=mocked_requests_get)
     def test_fetch(self, mock_get):

@@ -14,9 +14,7 @@ class Solution:
     1
     """
 
-    def isClosedIsland(
-        self, grid: List[List[int]], i: int, j: int, n: int, m: int
-    ) -> bool:
+    def isClosedIsland(self, grid: List[List[int]], i: int, j: int, n: int, m: int) -> bool:
         if grid[i][j] == -1 or grid[i][j] == 1:
             return True
         if self.isOnPerimeter(i=i, j=j, n=n, m=m):

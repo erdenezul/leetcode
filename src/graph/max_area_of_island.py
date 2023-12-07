@@ -33,12 +33,7 @@ class Solution:
                 (ci - 1, cj),
                 (ci, cj - 1),
             ):
-                if (
-                    0 <= new_i < n
-                    and 0 <= new_j < m
-                    and grid[new_i][new_j]
-                    and (new_i, new_j) not in seen
-                ):
+                if 0 <= new_i < n and 0 <= new_j < m and grid[new_i][new_j] and (new_i, new_j) not in seen:
                     stack.append((new_i, new_j))
                     seen.add((new_i, new_j))
         return size

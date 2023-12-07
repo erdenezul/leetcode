@@ -35,30 +35,17 @@ class Solution:
         walkable = False
         while queue:
             r, c = queue.pop(0)
-            if (
-                r == 0
-                or r == len(self.grid) - 1
-                or c == 0
-                or c == len(self.grid[0]) - 1
-            ):
+            if r == 0 or r == len(self.grid) - 1 or c == 0 or c == len(self.grid[0]) - 1:
                 walkable = True
             else:
                 enclaves += 1
-            if (
-                r < len(self.grid) - 1
-                and self.grid[r + 1][c] == 1
-                and (r + 1, c) not in self.seen
-            ):
+            if r < len(self.grid) - 1 and self.grid[r + 1][c] == 1 and (r + 1, c) not in self.seen:
                 self.seen.add((r + 1, c))
                 queue.append((r + 1, c))
             if r > 0 and self.grid[r - 1][c] == 1 and (r - 1, c) not in self.seen:
                 self.seen.add((r - 1, c))
                 queue.append((r - 1, c))
-            if (
-                c < len(self.grid[r]) - 1
-                and self.grid[r][c + 1] == 1
-                and (r, c + 1) not in self.seen
-            ):
+            if c < len(self.grid[r]) - 1 and self.grid[r][c + 1] == 1 and (r, c + 1) not in self.seen:
                 self.seen.add((r, c + 1))
                 queue.append((r, c + 1))
             if c > 0 and self.grid[r][c - 1] == 1 and (r, c - 1) not in self.seen:
