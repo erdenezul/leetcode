@@ -17,7 +17,6 @@ class Solution:
         True
         """
         parent = [i for i in range(26)]
-        rank = [1 for _ in range(26)]
 
         def find(n: str):
             p = parent[ord(n) - 97]
@@ -32,12 +31,7 @@ class Solution:
             if pa == pb:
                 return False
 
-            if rank[pa] > rank[pb]:
-                parent[pb] = pa
-                rank[pa] += rank[pb]
-            else:
-                parent[pa] = pb
-                rank[pb] += rank[pa]
+            parent[pb] = pa
             return True
 
         for equation in equations:
