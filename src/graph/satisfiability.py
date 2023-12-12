@@ -2,6 +2,17 @@ from typing import List
 
 
 class Solution:
+    """
+    Approach
+    Disjoint set
+    1. We will store variables in same component if they are equal
+    2. Then we will check non-equality equtions, if both variables in any of those equation are in same component, we return false.
+
+    Idea:
+        1. Traverse all edges with == to group them as cluster
+        2. Traverse all edges with != to check if there is any collission
+    """
+
     def equationsPossible(self, equations: List[str]) -> bool:
         """
         >>> s = Solution()
